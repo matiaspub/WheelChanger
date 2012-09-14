@@ -1,0 +1,8 @@
+[
+	{ "button": "scroll_up", "modifiers": ["ctrl"], "command": "wheel_changer" },
+	{ "button": "scroll_down", "modifiers": ["ctrl"], "command": "wheel_changer", "args": {"back": true} },
+	{ "button": "scroll_up", "modifiers": ["ctrl","shift"], "command": "wheel_changer", "args": {"step": 10} },
+	{ "button": "scroll_down", "modifiers": ["ctrl","shift"], "command": "wheel_changer", "args": {"back": true, "step": 10} },
+	{ "button": "scroll_up", "modifiers": ["ctrl","shift","super"], "command": "wheel_changer", "args": {"step": 100} },
+	{ "button": "scroll_down", "modifiers": ["ctrl","shift","super"], "command": "wheel_changer", "args": {"back": true, "step": 100} }
+]

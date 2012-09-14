@@ -1,0 +1,17 @@
+[
+	{ "keys": ["ctrl++"], "command": "wheel_changer" },
+	{ "keys": ["ctrl+="], "command": "wheel_changer" },
+	{ "keys": ["ctrl+keypad_plus"], "command": "wheel_changer" },
+	{ "keys": ["ctrl+-"], "command": "wheel_changer", "args": {"back": true} },
+	{ "keys": ["ctrl+keypad_minus"], "command": "wheel_changer", "args": {"back": true} },
+	{ "keys": ["ctrl+shift++"], "command": "wheel_changer", "args": {"step": 10} },
+	{ "keys": ["ctrl+shift+="], "command": "wheel_changer", "args": {"step": 10} },
+	{ "keys": ["ctrl+shift+keypad_plus"], "command": "wheel_changer", "args": {"step": 10} },
+	{ "keys": ["ctrl+shift+-"], "command": "wheel_changer", "args": {"back": true, "step": 10} },
+	{ "keys": ["ctrl+shift+keypad_minus"], "command": "wheel_changer", "args": {"back": true, "step": 10} },
+	{ "keys": ["ctrl+shift+super++"], "command": "wheel_changer", "args": {"step": 100} },
+	{ "keys": ["ctrl+shift+super+="], "command": "wheel_changer", "args": {"step": 100} },
+	{ "keys": ["ctrl+shift+super+keypad_plus"], "command": "wheel_changer", "args": {"step": 100} },
+	{ "keys": ["ctrl+shift+super+-"], "command": "wheel_changer", "args": {"back": true, "step": 100} },
+	{ "keys": ["ctrl+shift+super+keypad_minus"], "command": "wheel_changer", "args": {"back": true, "step": 100} }
+]
