@@ -12,7 +12,7 @@
 		["absolute","relative","fixed","static"]
 	],
 	// if list ending - start anew
-	"anew": false,
+	"anew": true,
 	// pattern for decimalic substrings
 	"decimal_pattern": "[+-]?\\d+[.\\d]*"
 }
