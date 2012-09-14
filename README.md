@@ -16,17 +16,17 @@ It is preferred and simplest way for most users.
 
 ### Using Git
 
-If you like work with HEAD you can locate SublimeTableEditor in your packages directory.
+If you like work with HEAD you can locate WheelChanger in your packages directory.
 
 - Go to your Packages directory, you can locate to your Packages directory by using the menu item 
   Preferences ->   Browse Packages...
-- Inside the Packages directory, clone the SublimeTableEditor repository using the command below: 
-  git clone https://github.com/matiaspub/WheelChanger.git SublimeTableEditor
+- Inside the Packages directory, clone the WheelChanger repository using the command below: 
+  git clone https://github.com/matiaspub/WheelChanger.git WheelChanger
 
 ### Download Manually
 
 - Download the files using the GitHub .zip download option.
-- Unzip the files and rename the folder to something like SublimeTableEditor.
+- Unzip the files and rename the folder to something like WheelChanger.
 - Copy the folder to your Sublime Text 2 Packages directory.
 
 ## Configuration
@@ -53,7 +53,7 @@ You can add self lists, but you must remember: everithing string in lists must b
 ````
 
 ## Key Map
-It contain redefine standart keys as ctrl++(encrease font size), but you can change it.
+It contains redefine standart keys as ctrl++(encrease font size), but you can change it.
 ````
 [
   { "keys": ["ctrl++"], "command": "wheel_changer" },
@@ -75,7 +75,7 @@ It contain redefine standart keys as ctrl++(encrease font size), but you can cha
 ````
 
 ## Mouse Map
-It contain redefine standart keys as first line in code below, but you can change it.
+It contains redefine standart keys as first line in code below, but you can change it.
 ````
 [
   { "button": "scroll_up", "modifiers": ["ctrl"], "command": "wheel_changer" },
