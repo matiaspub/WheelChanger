@@ -12,7 +12,7 @@ It is preferred and simplest way for most users.
 - Install Package Control http://wbond.net/sublime_packages/package_control
 - Open Package Control
 - Select 'Install Package'
-- Find and select 'Table Editor'
+- Find and select 'WheelChanger'
 
 ### Using Git
 
@@ -21,7 +21,7 @@ If you like work with HEAD you can locate SublimeTableEditor in your packages di
 - Go to your Packages directory, you can locate to your Packages directory by using the menu item 
   Preferences ->   Browse Packages...
 - Inside the Packages directory, clone the SublimeTableEditor repository using the command below: 
-  git clone https://github.com/vkocubinsky/SublimeTableEditor.git SublimeTableEditor
+  git clone https://github.com/matiaspub/WheelChanger.git SublimeTableEditor
 
 ### Download Manually
 
@@ -30,31 +30,62 @@ If you like work with HEAD you can locate SublimeTableEditor in your packages di
 - Copy the folder to your Sublime Text 2 Packages directory.
 
 ## Configuration
-There is currently no way to get list of available build systems in [Sublime], so you need to explicitly specify the ones you wanna list. Just add into your `XXX.sublime-project` something like this:
-
+You can add self lists, but you must remember: everithing string in lists must be unique
 ````
 {
-    "settings": {
-        "build_switcher_systems": ["Unit tests", "CoffeeScript"]
-    }
+  // lists of change words, words must be unique for all lists
+	"lists": [
+		["true","false"],
+		["True","False"],
+		["TRUE","FALSE"],
+		["inherit","pointer","crosshair","progress","help","move","wait"],
+		["bold","normal"],
+		["hidden","scroll","visible"],
+		["inside","outside"],
+		["capitalize","lowercase","uppercase","none"],
+		["absolute","relative","fixed","static"]
+	],
+	// if list ending - start anew
+	"anew": true,
+	// pattern for decimalic substrings
+	"decimal_pattern": "[+-]?\\d+[.\\d]*"
 }
 ````
 
-If you don't specify any build system, BuildSwitcher will just execute the currently selected build (the same behavior as Sublime's default `super+b` shortcut).
-
-If you specify only one build system, it will execute it without asking.
-
-If you specify multiple systems, you always get a pop up with options (sorted by usage).
-
-## Defining key shortcut
-By default, "build_switcher" is mapped to `CMD+B`, however you can easily change that, just add to your keymap preferences:
-
+## Key Map
+It contain redefine standart keys as ctrl++(encrease font size), but you can change it.
 ````
-{ "keys": ["super+b"], "command": "build_switcher" }
+[
+  { "keys": ["ctrl++"], "command": "wheel_changer" },
+	{ "keys": ["ctrl+="], "command": "wheel_changer" },
+	{ "keys": ["ctrl+keypad_plus"], "command": "wheel_changer" },
+	{ "keys": ["ctrl+-"], "command": "wheel_changer", "args": {"back": true} },
+	{ "keys": ["ctrl+keypad_minus"], "command": "wheel_changer", "args": {"back": true} },
+	{ "keys": ["ctrl+shift++"], "command": "wheel_changer", "args": {"step": 10} },
+	{ "keys": ["ctrl+shift+="], "command": "wheel_changer", "args": {"step": 10} },
+	{ "keys": ["ctrl+shift+keypad_plus"], "command": "wheel_changer", "args": {"step": 10} },
+	{ "keys": ["ctrl+shift+-"], "command": "wheel_changer", "args": {"back": true, "step": 10} },
+	{ "keys": ["ctrl+shift+keypad_minus"], "command": "wheel_changer", "args": {"back": true, "step": 10} },
+	{ "keys": ["ctrl+shift+alt++"], "command": "wheel_changer", "args": {"step": 100} },
+	{ "keys": ["ctrl+shift+alt+="], "command": "wheel_changer", "args": {"step": 100} },
+	{ "keys": ["ctrl+shift+alt+keypad_plus"], "command": "wheel_changer", "args": {"step": 100} },
+	{ "keys": ["ctrl+shift+alt+-"], "command": "wheel_changer", "args": {"back": true, "step": 100} },
+	{ "keys": ["ctrl+shift+alt+keypad_minus"], "command": "wheel_changer", "args": {"back": true, "step": 100} }
+]
 ````
 
-
+## Mouse Map
+It contain redefine standart keys as first line in code below, but you can change it.
+````
+[
+  { "button": "scroll_up", "modifiers": ["ctrl"], "command": "wheel_changer" },
+	{ "button": "scroll_down", "modifiers": ["ctrl"], "command": "wheel_changer", "args": {"back": true} },
+	{ "button": "scroll_up", "modifiers": ["ctrl","shift"], "command": "wheel_changer", "args": {"step": 10} },
+	{ "button": "scroll_down", "modifiers": ["ctrl","shift"], "command": "wheel_changer", "args": {"back": true, "step": 10} },
+	{ "button": "scroll_up", "modifiers": ["ctrl","shift","alt"], "command": "wheel_changer", "args": {"step": 100} },
+	{ "button": "scroll_down", "modifiers": ["ctrl","shift","alt"], "command": "wheel_changer", "args": {"back": true, "step": 100} }
+]
+````
 
 [Sublime]: http://www.sublimetext.com/
 [PackageControll]: http://wbond.net/sublime_packages/package_control/installation
-[tarball]: https://github.com/vojtajina/sublime-BuildSwitcher/tarball/master
