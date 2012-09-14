@@ -5,8 +5,7 @@ Whith WheelChanger you can change numbers(as in google chrome css editor) and li
 ## Instalation
 Recommended way is using [PackageControll] package.
 
-Using Sublime Package Control
-=============================
+### Using Sublime Package Control
 
 It is preferred and simplest way for most users. 
 
@@ -15,8 +14,7 @@ It is preferred and simplest way for most users.
 - Select 'Install Package'
 - Find and select 'Table Editor'
 
-Using Git
-=========
+### Using Git
 
 If you like work with HEAD you can locate SublimeTableEditor in your packages directory.
 
@@ -25,8 +23,7 @@ If you like work with HEAD you can locate SublimeTableEditor in your packages di
 - Inside the Packages directory, clone the SublimeTableEditor repository using the command below: 
   git clone https://github.com/vkocubinsky/SublimeTableEditor.git SublimeTableEditor
 
-Download Manually
-=================
+### Download Manually
 
 - Download the files using the GitHub .zip download option.
 - Unzip the files and rename the folder to something like SublimeTableEditor.
