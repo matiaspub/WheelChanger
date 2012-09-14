@@ -1,0 +1,31 @@
+[
+    {
+        "caption": "Wheel Changer: Encrease by 1",
+        "command": "wheel_changer"
+    },
+    {
+        "caption": "Wheel Changer: Decrease by 1",
+        "command": "wheel_changer",
+        "args": {"back": true}
+    },
+    {
+        "caption": "Wheel Changer: Encrease by 10",
+        "command": "wheel_changer",
+        "args": {"step":10}
+    },
+    {
+        "caption": "Wheel Changer: Decrease by 10",
+        "command": "wheel_changer",
+        "args": {"back": true, "step":10}
+    },
+    {
+        "caption": "Wheel Changer: Encrease by 100",
+        "command": "wheel_changer",
+        "args": {"step":100}
+    },
+    {
+        "caption": "Wheel Changer: Decrease by 100",
+        "command": "wheel_changer",
+        "args": {"back": true, "step":100}
+    }
+]

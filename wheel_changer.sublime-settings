@@ -1,0 +1,18 @@
+{
+	// lists of change words, words must be unique for all lists
+	"lists": [
+		["true","false"],
+		["True","False"],
+		["TRUE","FALSE"],
+		["inherit","pointer","crosshair","progress","help","move","wait"],
+		["bold","normal"],
+		["hidden","scroll","visible"],
+		["inside","outside"],
+		["capitalize","lowercase","uppercase","none"],
+		["absolute","relative","fixed","static"]
+	],
+	// if list ending - start anew
+	"anew": false,
+	// pattern for decimalic substrings
+	"decimal_pattern": "[+-]?\\d+[.\\d]*"
+}
