@@ -4,7 +4,7 @@ import sublime, sublime_plugin
 class WheelChangerCommand(sublime_plugin.TextCommand):
 	''' cool Wheeler. 
 	Simple command to chage digits or lists by mouse wheel 
-	On future: lists+options+diff file-types'''
+	On future: file-types'''
 	def run(self, edit, back=False, step=1):
 		settings = sublime.load_settings('wheel_changer.sublime-settings')
 		lists = settings.get('lists', [])
@@ -38,14 +38,14 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 			l, r = sel.a, sel.b
 			if(l == r):
 				sel = self.view.word(sel)
-				pre = self.view.substr(sublime.Region(sel.a-1,sel.a))
-				if pre=='-' or pre=='+':
-					sel = sublime.Region(sel.a-1,sel.b)
+				prereg = sublime.Region(sel.a-1,sel.a)
+				pre = self.view.substr(prereg)
+				if pre in ['-','+']:
+					sel = prereg
 			sel_str = self.view.substr(sel)
 			findes = dec_re.findall(sel_str)
 			for f in findes:
 				dig = self.isnumeric(f)
-				print dig
 				if not dig == None:
 					if not back:
 						dig += step
@@ -57,6 +57,7 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 			self.view.replace(edit,sel,new_str)
 
 	def isnumeric(self, txt):
+		'''Test if txt is numeric'''
 		try:
 			if(txt.__contains__('.')):
 				return float(txt)
@@ -66,6 +67,7 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 			return None
 
 	def replace_all(self, text):
+		'''Replace all keys to items from self.dic_repl in text'''
 		for i, j in self.dic_repl.iteritems():
 			if not i in self.not_in:
 				if text.__contains__(i):
