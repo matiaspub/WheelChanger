@@ -3,7 +3,7 @@ import sublime, sublime_plugin
 
 class WheelChangerCommand(sublime_plugin.TextCommand):
 	''' cool Wheeler. 
-	Simple command to chage digits or lists by mouse wheel 
+	Simple command to chage digits or lists by mouse wheel -30px
 	On future: file-types'''
 	def run(self, edit, back=False, step=1):
 		settings = sublime.load_settings('wheel_changer.sublime-settings')
@@ -38,10 +38,10 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 			l, r = sel.a, sel.b
 			if(l == r):
 				sel = self.view.word(sel)
-				prereg = sublime.Region(sel.a-1,sel.a)
-				pre = self.view.substr(prereg)
-				if pre in ['-','+']:
-					sel = prereg
+			prereg = sublime.Region(sel.a-1,sel.a)
+			pre = self.view.substr(prereg)
+			if pre in ['-','+']:
+				sel = sublime.Region(sel.a-1,sel.b)
 			sel_str = self.view.substr(sel)
 			findes = dec_re.findall(sel_str)
 			for f in findes:
@@ -51,7 +51,6 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 						dig += step
 					else:
 						dig -= step
-					print dig
 					self.dic_repl[ str(f) ] = str(dig)
 			new_str = self.replace_all(sel_str)
 			self.view.replace(edit,sel,new_str)
