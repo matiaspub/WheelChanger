@@ -3,7 +3,7 @@ import sublime, sublime_plugin
 
 class WheelChangerCommand(sublime_plugin.TextCommand):
 	''' cool Wheeler. 
-	Simple command to chage digits or lists by mouse wheel -30px
+	Simple command to chage digits or lists by mouse wheel
 	On future: file-types'''
 	def run(self, edit, back=False, step=1):
 		settings = sublime.load_settings('wheel_changer.sublime-settings')
