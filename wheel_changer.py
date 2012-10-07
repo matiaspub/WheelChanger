@@ -36,7 +36,6 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 					else:
 						var = v[v.index(vv)+1]
 				self.dic_repl[ str(vv) ] = str(var)
-		
 		for sel in sels:
 			l, r = sel.a, sel.b
 			if l == r:
@@ -54,19 +53,22 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 				if(len(ss)):
 					sel = fregion
 				else:
-					continue
+					wsl = self.view.word(sel)
+					if self.view.substr(wsl) in self.dic_repl:
+						sel = wsl
+					else:
+						continue
 			sel_str = self.view.substr(sel)
 			findes = dec_re.findall(sel_str)
-			if len(findes)<=0:
-				continue
-			for f in findes:
-				dig = self.isnumeric(f)
-				if not dig == None:
-					if not back:
-						dig += step
-					else:
-						dig -= step
-					self.dic_repl[ str(f) ] = str(dig)
+			if len(findes)>0:
+				for f in findes:
+					dig = self.isnumeric(f)
+					if not dig == None:
+						if not back:
+							dig += step
+						else:
+							dig -= step
+						self.dic_repl[ str(f) ] = str(dig)
 			new_str = self.replace_all(sel_str)
 			self.view.replace(edit,sel,new_str)
 
