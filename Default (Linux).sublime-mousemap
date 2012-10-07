@@ -4,5 +4,7 @@
 	{ "button": "scroll_up", "modifiers": ["ctrl","shift"], "command": "wheel_changer", "args": {"step": 10} },
 	{ "button": "scroll_down", "modifiers": ["ctrl","shift"], "command": "wheel_changer", "args": {"back": true, "step": 10} },
 	{ "button": "scroll_up", "modifiers": ["ctrl","shift","alt"], "command": "wheel_changer", "args": {"step": 100} },
-	{ "button": "scroll_down", "modifiers": ["ctrl","shift","alt"], "command": "wheel_changer", "args": {"back": true, "step": 100} }
+	{ "button": "scroll_down", "modifiers": ["ctrl","shift","alt"], "command": "wheel_changer", "args": {"back": true, "step": 100} },
+	{ "button": "scroll_down", "modifiers": ["ctrl","alt"], "command": "wheel_changer", "args": {"back": true, "step": 0.1} },
+	{ "button": "scroll_up", "modifiers": ["ctrl","alt"], "command": "wheel_changer", "args": {"step": 0.1} }
 ]

@@ -6,6 +6,9 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 	Simple command to chage digits or lists by mouse wheel
 	On future: file-types'''
 	def run(self, edit, back=False, step=1):
+		digits_list = range(10)
+		addi_ls = ['-','+', '.']
+		digits_list = digits_list+addi_ls
 		settings = sublime.load_settings('WheelChanger.sublime-settings')
 		lists = settings.get('lists', [])
 		self.anew = settings.get('anew', True)
@@ -36,14 +39,26 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 		
 		for sel in sels:
 			l, r = sel.a, sel.b
-			if(l == r):
-				sel = self.view.word(sel)
-			prereg = sublime.Region(sel.a-1,sel.a)
-			pre = self.view.substr(prereg)
-			if pre in ['-','+']:
-				sel = sublime.Region(sel.a-1,sel.b)
+			if l == r:
+				pre = self.view.substr(sublime.Region(l-1,l))
+				while pre in digits_list or self.isnumeric(pre) in digits_list:
+					l -= 1
+					pre = self.view.substr(sublime.Region(l-1,l))
+				post = self.view.substr(sublime.Region(r,r+1))
+				while post in digits_list or self.isnumeric(post) in digits_list:
+					r += 1
+					post = self.view.substr(sublime.Region(r,r+1))
+				fregion = sublime.Region(l,r)
+				sstr = self.view.substr(fregion)
+				ss = dec_re.findall(sstr)
+				if(len(ss)):
+					sel = fregion
+				else:
+					continue
 			sel_str = self.view.substr(sel)
 			findes = dec_re.findall(sel_str)
+			if len(findes)<=0:
+				continue
 			for f in findes:
 				dig = self.isnumeric(f)
 				if not dig == None:

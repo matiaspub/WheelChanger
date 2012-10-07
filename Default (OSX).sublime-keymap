@@ -13,5 +13,10 @@
 	{ "keys": ["ctrl+shift+super+="], "command": "wheel_changer", "args": {"step": 100} },
 	{ "keys": ["ctrl+shift+super+keypad_plus"], "command": "wheel_changer", "args": {"step": 100} },
 	{ "keys": ["ctrl+shift+super+-"], "command": "wheel_changer", "args": {"back": true, "step": 100} },
-	{ "keys": ["ctrl+shift+super+keypad_minus"], "command": "wheel_changer", "args": {"back": true, "step": 100} }
+	{ "keys": ["ctrl+shift+super+keypad_minus"], "command": "wheel_changer", "args": {"back": true, "step": 100} },
+	{ "keys": ["ctrl+super++"], "command": "wheel_changer", "args": {"step": 0.1} },
+	{ "keys": ["ctrl+super+="], "command": "wheel_changer", "args": {"step": 0.1} },
+	{ "keys": ["ctrl+super+keypad_plus"], "command": "wheel_changer", "args": {"step": 0.1} },
+	{ "keys": ["ctrl+super+-"], "command": "wheel_changer", "args": {"back": true, "step": 0.1} },
+	{ "keys": ["ctrl+super+keypad_minus"], "command": "wheel_changer", "args": {"back": true, "step": 0.1} }
 ]
