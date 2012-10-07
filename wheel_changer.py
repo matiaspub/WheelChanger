@@ -6,7 +6,7 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 	Simple command to chage digits or lists by mouse wheel
 	On future: file-types'''
 	def run(self, edit, back=False, step=1):
-		settings = sublime.load_settings('wheel_changer.sublime-settings')
+		settings = sublime.load_settings('WheelChanger.sublime-settings')
 		lists = settings.get('lists', [])
 		self.anew = settings.get('anew', True)
 		dec_ptrn = settings.get('decimal_pattern', "[+-]?\d+[.\d]*")
