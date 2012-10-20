@@ -30,7 +30,7 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 				else:
 					if v.index(vv)+1 >= len(v):
 						if self.anew:
-							var = v[v.index(vv)-len(v)-1]
+							var = v[0]
 						else:
 							var = v[len(v)-1]
 					else:
