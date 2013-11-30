@@ -1,4 +1,4 @@
-# WheelChanger (Sublime Text 2 plugin)
+# WheelChanger (Sublime Text 2 and 3 plugin)
 
 Whith WheelChanger you can change numbers(as in google chrome css editor) and lists with mouse wheel.
 
@@ -27,7 +27,7 @@ If you like work with HEAD you can locate WheelChanger in your packages director
 
 - Download the files using the GitHub .zip download option.
 - Unzip the files and rename the folder to something like WheelChanger.
-- Copy the folder to your Sublime Text 2 Packages directory.
+- Copy the folder to your Sublime Text 2 or 3 Packages directory.
 
 ## Configuration
 You can add self lists, but you must remember: everithing string in lists must be unique

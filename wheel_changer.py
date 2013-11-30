@@ -1,6 +1,12 @@
 import re
 import sublime, sublime_plugin
 
+if sublime.version() < '3000':
+	# we are on ST2 and Python 2.X
+	_ST3 = False
+else:
+	_ST3 = True
+
 class WheelChangerCommand(sublime_plugin.TextCommand):
 	''' cool Wheeler. 
 	Simple command to chage digits or lists by mouse wheel
@@ -8,7 +14,10 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 	def run(self, edit, back=False, step=1):
 		digits_list = range(10)
 		addi_ls = ['-','+', '.']
-		digits_list = digits_list+addi_ls
+		if _ST3:
+			digits_list = list(digits_list)+addi_ls
+		else:
+			digits_list = digits_list+addi_ls
 		settings = sublime.load_settings('WheelChanger.sublime-settings')
 		lists = settings.get('lists', [])
 		self.anew = settings.get('anew', True)
@@ -84,7 +93,11 @@ class WheelChangerCommand(sublime_plugin.TextCommand):
 
 	def replace_all(self, text):
 		'''Replace all keys to items from self.dic_repl in text'''
-		for i, j in self.dic_repl.iteritems():
+		if _ST3:
+			items = self.dic_repl.items()
+		else:
+			items = self.dic_repl.iteritems()
+		for i, j in items:
 			if not i in self.not_in:
 				if text.__contains__(i):
 					text = text.replace(i, j)
